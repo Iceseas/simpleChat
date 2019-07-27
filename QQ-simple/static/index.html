@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="./css/QQ.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="color: aliceblue">Welcome ChatRoom！</h1>
+    <div class="QQ-box">
+        <h3>ChatRoom</h3>
+        <div class="messages-box">
+            <div class="outputT">
+
+            </div>
+        </div>
+        <textarea name="" class="inputT" id="inputT" rows="10"></textarea>
+        <button class="send" onclick="sendServer()">Send</button>
+    </div>
+
+    <script>
+        let str = '';
+        const ws = new WebSocket('ws://172.29.193.185:1111');
+        ws.onopen = function() {
+            console.log('服务器已连接');
+        }
+        ws.onmessage = function(msg) {
+            let Ctime = new Date();
+            let mstr = `
+            <br/>
+            <div class="msg-box">
+                    <img class="userimg" width="40" height="40" src="./img/user.jpg">
+                    <div class="sendMsg">
+                        <span class="Ctime-box">${Ctime}</span>
+                        <br/>
+                        ${msg.data}
+                         </div>
+                </div><br/>`;
+            str += mstr;
+            $('.outputT').html(str);
+        }
+        ws.onclose = function() {
+            console.log('服务器已断开');
+        }
+
+        function sendServer() {
+            ws.send($('#inputT').val());
+        }
+    </script>
+</body>
+
+</html>

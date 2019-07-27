@@ -1,0 +1,106 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #192a56;
+}
+
+.QQ-box {
+    width: 900px;
+    height: 800px;
+    position: relative;
+    margin: 20px auto;
+    background: #2f3640;
+    border: 1px solid #636e72;
+    box-shadow: 0 0 6px #2f3640;
+    border-radius: 8px;
+}
+
+h3 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40px;
+    color: #fff;
+}
+
+.messages-box {
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    top: 100px;
+    box-sizing: border-box;
+    border-top: 1px solid #636e72;
+    border-bottom: 1px solid #636e72;
+}
+
+.outputT {
+    width: 100%;
+    height: 400px;
+    background: #fff;
+    color: black;
+    overflow: auto;
+}
+
+textarea {
+    border: none;
+}
+
+.inputT {
+    padding-top: 5px;
+    padding-left: 10px;
+    width: 100%;
+    bottom: 50px;
+    position: absolute;
+    resize: none;
+    box-sizing: border-box;
+    border-top: 1px solid #636e72;
+    border-bottom: 1px solid #636e72;
+}
+
+.inputT:target {
+    border-top: 1px solid #636e72;
+    border-bottom: 1px solid #636e72;
+}
+
+.send {
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    width: 70px;
+    height: 35px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #0984e3;
+    color: #fff;
+    cursor: pointer;
+}
+
+.send:hover {
+    background: #40739e;
+}
+
+.msg-box {
+    background: #fff;
+    width: 100%;
+    padding-left: 10px;
+    box-sizing: border-box;
+    display: flow-root;
+    border-bottom: 1px solid #afbbca;
+}
+
+.sendMsg {
+    float: left;
+    height: auto;
+    width: 740px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.userimg {
+    float: left;
+}
